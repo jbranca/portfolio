@@ -1,0 +1,8 @@
+tricks:
+  - watchdog.tricks.ShellCommandTrick:
+      wait_for_process: true
+      drop_during_process: true
+      shell_command: "rsync -avz --delete --exclude-from=.watchmedo.ignore ./ web@157.245.118.71:/home/web/portfolio/"
+      ignore_directories: true
+      ignore_patterns:
+        - "*/.git/*"

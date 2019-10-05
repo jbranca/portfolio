@@ -1,0 +1,134 @@
+body, html {
+  max-width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  height: 100%;
+  font-family: Garamond, sans-serif;
+}
+
+.resume > header {
+  height: 6vh;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  position: fixed;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.header-name {
+  font-size: 4rem;
+  width: 50vw;
+}
+
+.header-info {
+  text-align: right;
+  width: 48vw;
+  padding-right: 3rem;
+}
+
+.resume-jobs {
+  position: relative;
+  z-index: -1;
+}
+
+.job {
+  position: relative;
+  opacity: 0.75;
+  background-attachment: fixed;
+  background-position: 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.job:first {
+  min-height: 80vh;
+}
+
+.job-header {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  background-color: #fff;
+  border: 1px solid #000;
+  position: sticky;
+  top: 9.35vh;
+  padding: 1rem;
+  width: 98%;
+  font-size: 1.5rem;
+}
+
+.job-title {
+  width: 68vw;
+}
+
+.job-dates {
+  width: 27vw;
+}
+
+.job-description {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .job {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .header-name {
+    font-size: 3rem;
+    width: 40vw;
+  }
+
+  .header-info {
+    width: 40vw;
+  }
+
+  .job-title {
+    font-size: 0.75rem;
+  }
+
+  .job-dates {
+    font-size: 0.75rem;
+  }
+
+  .job-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .header-name {
+    font-size: 2rem;
+  }
+
+  .header-info {
+
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .header-name {
+    font-size: 1.25rem;
+  }
+
+  .header-info {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .header-name {
+    font-size: 1rem;
+  }
+
+  .header-info {
+    font-size: 0.65rem;
+  }
+}
