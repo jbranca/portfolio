@@ -51,7 +51,7 @@ function ResumeJob(props) {
     window.innerWidth || 0
   );
 
-  if (viewportWidth < 400) {
+  if (viewportWidth < 541) {
     jobImg = props.job.mobileImg;
   }
 
@@ -97,12 +97,6 @@ function App() {
       <ResumeHeader />
       <div className="resume-jobs">
         {resumeJobs}
-      </div>
-      <div className="certifications">
-        <ResumeCertifications />
-      </div>
-      <div className="education">
-
       </div>
     </div>
   );

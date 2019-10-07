@@ -1,11 +1,11 @@
 const jobs = [
   {
     title: 'Head of Development - US',
-    company: 'DAZN Group (formerly Perform Media)',
+    company: 'DAZN Group',
     location: 'Charlotte, NC',
     dates: 'June 2018 - Present',
-    img: '/img/dazn-sn.png',
-    mobileImg: '/img/dazn-sn-mobile.png',
+    img: '/img/dazn-sn.jpg',
+    mobileImg: '/img/dazn-sn-mobile.jpg',
     description: [
       `Developed project scope, timelines, and tasks working closely with the product team using agile methodologies.`,
       `Helped scrum team to rebuild an additional 3 Sporting News editions (Canada, Australia, and the US) and 2 NBA editions (Japan and Australia)  using JavaScript (ES6), Laravel, Redis and Akamai.`,
@@ -19,8 +19,8 @@ const jobs = [
     company: 'Perform Media',
     location: 'Charlotte, NC',
     dates: 'June 2013 - June 2018',
-    img: '/img/perform-sn.png',
-    mobileImg: '/img/perform-sn.png',
+    img: '/img/perform-sn.jpg',
+    mobileImg: '/img/perform-sn.jpg',
     description: [
       `Lead developer on a scrum team that built and released 5 global editions for the NBA and 1 Sporting News edition (Japan) with a JavaScript(ES6), Laravel, Redis and Akamai stack.`,
       `Created Australian edition of sportingnews.com`,
@@ -33,7 +33,8 @@ const jobs = [
     company: 'ESPN',
     location: 'New York, NY',
     dates: 'August 2012 - June 2013',
-    img: '',
+    img: '/img/espn.jpg',
+    mobileImg: '/img/espn.jpg',
     description: [
       `Responsible for the user management of push/SMS notifications in ESPN apps, including Scorecenter via a proprietary language called Tea.`,
       `Cleaned up the Alerts API for use in all apps by reorganizing the API to be more accessible.`,
@@ -41,11 +42,12 @@ const jobs = [
     ]
   },
   {
-    title: 'Web Developer promoted to Senior Web Developer',
+    title: 'Senior Web Developer',
     company: 'Sporting News',
-    location: 'New York NY and Charlotte, NC',
+    location: 'New York and Charlotte',
     dates: 'August 2006 - August 2012',
-    img: '',
+    img: '/img/sportingnews.jpg',
+    mobileImg: '/img/sportingnews.jpg',
     description: [
       `Released and maintained over 10 salary cap fantasy sports games with over 130,000 unique users on a custom language (Velma), PHP, JavaScript (jQuery) and Oracle.`,
       `Integrated third-party APIs to support editorial content within the fantasy games.`,
@@ -56,10 +58,11 @@ const jobs = [
   },
   {
     title: 'Web Developer',
-    company: 'New England Research Institutes',
+    company: 'NERI',
     location: 'Watertown, MA',
     dates: 'June 2004 - August 2006',
-    img: '',
+    img: '/img/neri.jpg',
+    mobileImg: '/img/neri.jpg',
     description: [
       `Developer for ASP/JavaScript based forms for anonymous medical clinical trial data.  Clients included pharmaceutical companies and the federal government (FDA).`,
       `Responsibilities for each project included meeting with the project lead, receiving instructions on how each form was to look and function, forwarding on the form to the forms programmers, and interacting between the project lead and forms programmer to complete each form.`

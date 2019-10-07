@@ -7,23 +7,22 @@ body, html {
 }
 
 .resume > header {
-  height: 6vh;
+  width: 100%;
+  height: 70px;
   display: inline-grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 49% 49%;
   position: fixed;
   background-color: #fff;
-  padding: 1rem;
+  padding: 1%;
 }
 
 .header-name {
   font-size: 4rem;
-  width: 50vw;
+  line-height: 4.75rem;
 }
 
 .header-info {
   text-align: right;
-  width: 48vw;
-  padding-right: 3rem;
 }
 
 .resume-jobs {
@@ -49,29 +48,33 @@ body, html {
   display: inline-grid;
   grid-template-columns: auto auto;
   background-color: #fff;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   position: sticky;
-  top: 9.35vh;
-  padding: 1rem;
+  top: 108px;
+  padding: 1%;
   width: 98%;
   font-size: 1.5rem;
 }
 
 .job-title {
-  width: 68vw;
+  width: 70vw;
 }
 
 .job-dates {
   width: 27vw;
+  text-align: right;
 }
 
 .job-description {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #000;
+  width: 100vw;
+  background-color: #ddd;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  z-index: -2;
 }
 
 @media only screen and (max-device-width: 1024px) {
@@ -83,11 +86,6 @@ body, html {
 @media only screen and (max-width: 1080px) {
   .header-name {
     font-size: 3rem;
-    width: 40vw;
-  }
-
-  .header-info {
-    width: 40vw;
   }
 
   .job-title {
@@ -108,18 +106,27 @@ body, html {
     font-size: 2rem;
   }
 
-  .header-info {
-
+  .job-description {
+    top: 35%;
   }
 }
 
 @media only screen and (max-width: 540px) {
   .header-name {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    line-height: 3rem;
   }
 
   .header-info {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  .job-header {
+    top: 8vh;
+  }
+
+  .job-title, .job-dates {
+    font-size: 0.6rem;
   }
 }
 
