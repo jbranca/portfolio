@@ -3,7 +3,7 @@ const jobs = [
     title: 'Head of Development - US',
     company: 'DAZN Group',
     location: 'Charlotte, NC',
-    dates: 'June 2018 - Present',
+    dates: 'June 2018 - October 2019',
     img: '/img/dazn-sn.jpg',
     mobileImg: '/img/dazn-sn-mobile.jpg',
     description: [
@@ -67,21 +67,5 @@ const jobs = [
       `Developer for ASP/JavaScript based forms for anonymous medical clinical trial data.  Clients included pharmaceutical companies and the federal government (FDA).`,
       `Responsibilities for each project included meeting with the project lead, receiving instructions on how each form was to look and function, forwarding on the form to the forms programmers, and interacting between the project lead and forms programmer to complete each form.`
     ]
-  }
-];
-
-const certifications = [
-  {
-    title: 'Application Security and Secure Coding Training, PHP',
-    company: 'Codebashing by Checkmark'
-  }
-];
-
-const education = [
-  {
-    degree: 'Bachelor of Science',
-    concentration: 'Computer Science',
-    university: 'Villanova University',
-    graduation_date: 'Graduated in 2004'
   }
 ];
