@@ -61,10 +61,18 @@ function About(props) {
 }
 
 class Resume extends React.Component {
-  getBackgroundColor(colorToInject, percentage) {
-    const leftoverPercentage = 100 - percentage;
+  constructor(props) {
+    super(props);
+  }
+
+  getSkillStyle(elementId, colorToInject, percentage) {
+    animationList.push({
+      elementId: elementId,
+      percentage: percentage
+    })
+
     return {
-      backgroundImage: `linear-gradient(-90deg, #fff ${leftoverPercentage}%,  ${colorToInject} ${percentage}%)`
+      backgroundColor: colorToInject
     }
   }
 
@@ -93,8 +101,10 @@ class Resume extends React.Component {
           <div key={skillTypeData.type} className="skill-type">
             <h4 className="skill-type-header">{skillTypeData.type}</h4>
             {skillTypeData.data.map((skill, skillIndex) => 
-              <div key={ 'skill' + skillIndex } className="skill" style={this.getBackgroundColor(skill.color, skill.experience)}>
-                <div className="skill-name">{skill.name}</div>
+              <div key={ 'skill' + skillIndex } className="skill">
+                <div className="skill-name">
+                  <div className="skill-bg" id={ 'skill-' + skillTypeIndex + '-bg-' + skillIndex} style={this.getSkillStyle('skill-' + skillTypeIndex + '-bg-' + skillIndex, skill.color, skill.experience)}>{skill.name}</div>
+                </div>
               </div>
             )}
           </div>

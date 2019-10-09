@@ -22,14 +22,11 @@ body {
   height: 70px;
   text-align: center;
   margin-bottom: 50px;
+  color: #ddd;
 }
 
 .header-name {
   font-size: 4rem;
-}
-
-.header-info {
-  color: #222;
 }
 
 .resume {
@@ -107,10 +104,15 @@ body {
 
 .skill {
   border: 1px solid #000;
-  padding: 3px;
   margin-bottom: 5px;
   color: #000;
   background-color: #fff;
+}
+
+.skill-bg {
+  padding: 5px 0 5px 5px;
+  white-space: nowrap;
+  width: 1px;
 }
 
 @media only screen and (max-width: 1080px) {
