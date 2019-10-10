@@ -63,13 +63,46 @@ function About(props) {
 class Resume extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { firstPaint: true, animated: false };
+    this.animationList = [];
+  }
+
+  animate() {
+    let animationDelay = 0;
+
+    if (this.state.animated === true) {
+      return true;
+    }
+
+    for (var i = 0; i < this.animationList.length; i++) {
+      document.getElementById(this.animationList[i].elementId).animate([
+        { width: '1%' },
+        { width: this.animationList[i].percentage + '%' }
+      ], {
+        delay: animationDelay,
+        duration: 1000,
+        fill: 'forwards'
+      });
+
+      animationDelay += 250;
+    }
+
+    return true;
+  }
+
+  componentDidMount() {
+    this.setState({
+      firstPaint: false,
+      animated: this.animate()
+    });
   }
 
   getSkillStyle(elementId, colorToInject, percentage) {
-    animationList.push({
+    this.animationList.push({
       elementId: elementId,
       percentage: percentage
-    })
+    });
 
     return {
       backgroundColor: colorToInject

@@ -13,29 +13,10 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-    <script type="text/babel">
-    let animationList = [];
-    </script>
     <script type="text/babel" src="js/jobs.js"></script>
     <script type="text/babel" src="js/skills.js"></script>
     <script type="text/babel" src="js/certifications.js"></script>
     <script type="text/babel" src="js/education.js"></script>
     <script type="text/babel" src="js/resume.js"></script>
-    <script type="text/babel">
-    let animationDelay = 0;
-
-    for (var i = 0; i < animationList.length; i++) {
-      document.getElementById(animationList[i].elementId).animate([
-        { width: '1%' },
-        { width: animationList[i].percentage + '%' }
-      ], {
-        delay: animationDelay,
-        duration: 1000,
-        fill: 'forwards'
-      });
-
-      animationDelay += 250;
-    }
-    </script>
   </body>
 </html>
