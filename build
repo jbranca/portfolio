@@ -1,0 +1,3 @@
+#!/bin/bash
+
+`browserify ./client/data/*.js -o client/bundle.js -t [ babelify --global=true --ignore [./node_modules] --presets [ @babel/preset-env @babel/preset-react ] --plugins [ transform-react-jsx ] ]`
