@@ -146,7 +146,7 @@ class Skills extends React.Component {
           {skillTypeData.data.map((skill, skillIndex) => 
             <div key={ 'skill' + skillIndex } className="skill">
               <div className="skill-name">
-                <div className="skill-bg" id={ 'skill-' + skillTypeIndex + '-bg-' + skillIndex} style={this.getSkillStyle('skill-' + skillTypeIndex + '-bg-' + skillIndex, skill.color, skill.experience)}>{skill.name}</div>
+                <div className="skill-bg" id={ 'skill-' + skillTypeIndex + '-bg-' + skillIndex} style={this.getSkillStyle('skill-' + skillTypeIndex + '-bg-' + skillIndex, skill.bgColor, skill.experience)}>{skill.name}</div>
               </div>
             </div>
           )}

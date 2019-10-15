@@ -91,7 +91,7 @@ for (var i = 0; i < skills.length; i++) {
       randomColor = getRandomColor();
     }
 
-    skills[i].data[j].color = randomColor;
+    skills[i].data[j].bgColor = randomColor;
     skills[i].data[j].invertedColor = getInvertedColor(randomColor);
   }
 }

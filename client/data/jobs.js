@@ -11,7 +11,7 @@ module.exports = [
       `Helped scrum team to rebuild an additional 3 Sporting News editions (Canada, Australia, and the US) and 2 NBA editions (Japan and Australia)  using JavaScript (ES6), Laravel, Redis and Akamai.`,
       `Implement A/B tests using Google Optimize and SEO optimizations to improve the overall user engagement among Sporting News’ editions.`,
       `Managed an eight person team, five developers, two quality assurance testers and one scrum master.`,
-      `Interviewed and hired developers and QA testers, evaluating applicants technically and cultural fit.`
+      `Interviewed and hired developers and QA testers, evaluating applicants technically and for cultural fit.`
     ]
   },
   {

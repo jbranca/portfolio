@@ -1,3 +1,12 @@
 #!/bin/bash
 
-`browserify ./client/data/*.js -o client/bundle.js -t [ babelify --global=true --ignore [./node_modules] --presets [ @babel/preset-env @babel/preset-react ] --plugins [ transform-react-jsx ] ]`
+# get script path to make sure we're in the correct directory
+SCRIPTPATH=$(dirname "$BASH_SOURCE")
+cd $SCRIPTPATH
+
+TEMP_BUNDLE_FILE=./client/bundle.js
+browserify ./client/data/*.js -o $TEMP_BUNDLE_FILE -t [ babelify --global=true --ignore [./node_modules] --presets [ @babel/preset-env @babel/preset-react ] --plugins [ transform-react-jsx ] ]
+browserify $TEMP_BUNDLE_FILE -o $TEMP_BUNDLE_FILE -t [ uglifyify ]
+MD5_HASH=`md5 -q $TEMP_BUNDLE_FILE`
+cd client && find . -name "index.html" -exec sed -i '' "s|public/js/bundle-[A-Za-z0-9]\{2,\}|public/js/bundle-$MD5_HASH|g" {} \;
+cd .. && mv $TEMP_BUNDLE_FILE public/js/bundle-$MD5_HASH.js
