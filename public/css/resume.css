@@ -36,7 +36,7 @@ body {
 .resume-tabs {
   width: 100%;
   display: inline-grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   text-align: center;
   padding-left: 0;
   margin-top: 0;
@@ -75,8 +75,12 @@ body {
   border-right: solid 1px #ddd;
 }
 
-#work-experience, #skills {
+#work-experience, #skills, #about-section, #contact-section {
   padding: 10px;
+}
+
+#about-section div, #contact-section div {
+  font-size: 0.85rem;
 }
 
 .job-header {
@@ -149,10 +153,10 @@ body {
   }
 
   .resume-tabs {
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
   }
 
-  .resume-tabs li:nth-child(3) {
+  .resume-tabs li:nth-child(2) {
     border-style: solid none none solid;
   }
 

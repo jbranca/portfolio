@@ -4,9 +4,9 @@ import 'web-animations-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import contact from './contact';
+import about from './about';
 import jobs from './jobs';
-import certifications from './certifications';
-import education from './education';
 import skills from './skills';
 
 const mobileWidth = 540;
@@ -36,19 +36,35 @@ class ResumeTabs extends React.Component {
   constructor(props) {
     super(props);
 
-    this.tabs = [
-      { name: 'about', title: 'About Me', component: <About /> },
-      { name: 'resume', title: 'Resume', component: <Resume /> },
-      { name: 'contact', title: 'Contact Me', component: <Contact /> }
-    ];
+    this.setInitialState(1);
 
+    this.changeTab = this.changeTab.bind(this);
+    this.setInitialState = this.setInitialState.bind(this);
+  }
+
+  setInitialState(onLoad) {
     if (isMobile()) {
-      this.tabs.splice(this.tabs.length - 1, 0, 
-        { name: 'skills', title: 'Skills', component: <Skills /> });
+      this.tabs = [
+        { name: 'about', title: 'About Me', component: <About /> },
+        { name: 'resume', title: 'Resume', component: <Resume /> },
+        { name: 'skills', title: 'Skills', component: <Skills /> }
+      ];
+    } else {
+      this.tabs = [
+        { name: 'about', title: 'About Me', component: <About /> },
+        { name: 'resume', title: 'Resume', component: <Resume /> }
+      ];
     }
 
-    this.state = { currentTab: this.tabs[1] };
-    this.changeTab = this.changeTab.bind(this);
+    if (onLoad === 1) {
+      this.state = { currentTab: this.tabs[1] };
+    } else {
+      this.setState({ currentTab: this.tabs[1] });
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.setInitialState);
   }
 
   changeTab(event) {
@@ -60,7 +76,7 @@ class ResumeTabs extends React.Component {
       return;
     }
 
-    this.setState({ currentTab: this.tabs[target]});
+    this.setState({ currentTab: this.tabs[target] });
   }
 
   render() {
@@ -79,12 +95,27 @@ class ResumeTabs extends React.Component {
   }
 }
 
-function About(props) {
-  return (
-    <div id="about-section">
-      <h3>About</h3>
-    </div>
-  );
+class About extends React.Component {
+  render() {
+    const mailTo = 'mailto:' + contact.email;
+
+    return (
+      <div id="about-section">
+        <h3>About</h3>
+        <div id="about-summary">
+          <strong>{about.summary.title}</strong> {about.summary.content}
+        </div>
+        <h4>Education</h4>
+        <div>{about.education.degree} in <strong>{about.education.concentration}</strong> from <em>{about.education.university}</em>, {about.education.graduation_date}</div>
+        <h4>Certifications</h4>
+        <div>{about.certifications[0]}</div>
+        <h4>Contact Me</h4>
+        <div>Email: <a href={mailTo}>{contact.email}</a></div>
+        <div>Github: <a target="_blank" rel="noopener noreferrer" href={contact.github}>{contact.github}</a></div>
+        <div>LinkedIn: <a target="_blank" rel="noopener noreferrer" href={contact.linkedin}>{contact.linkedin}</a></div>
+      </div>
+    );
+  }
 }
 
 class Skills extends React.Component {
@@ -186,26 +217,6 @@ class Resume extends React.Component {
         {skills}
       </div>
     );
-  }
-}
-
-function Contact(props) {
-  return (
-    <div id="contact-section">
-      <h3>Contact</h3>
-    </div>
-  );
-}
-
-class ResumeCertifications extends React.Component {
-  render() {
-    let html = '';
-
-    for (var i = 0; i < certifications.length; i++) {
-      html += `${certifications[i].title} - ${certifications[i].company}`;
-    }
-
-    return html;
   }
 }
 

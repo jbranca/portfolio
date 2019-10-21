@@ -58,7 +58,7 @@ let skills = [
       { name: 'JavaScript', experience: 50 },
       { name: 'PHP', experience: 75 },
       { name: 'Python', experience: 10 },
-      { name: 'HTML/CSS', experience: 95 },
+      { name: 'HTML/CSS', experience: 97 },
       { name: 'MySQL', experience: 50 },
       { name: 'Oracle', experience: 10 },
       { name: 'Memcache', experience: 50 },
